@@ -85,7 +85,7 @@ public class OrderService {
         return orderRepository.getOrdersBySalesManIdAndStatus(id, status);
     }
 
-    public List<Order> getByRegisterDayAndSalesManId(String registerDay, Integer id){
-        return orderRepository.getByRegisterDayAndSalesManId(registerDay,id);
+    public List<Order> getOrdersBySalesManIdAndRegisterDay(Integer id, String registerDay) {
+        return orderRepository.getOrdersBySalesManIdAndRegisterDay(id, registerDay);
     }
 }
