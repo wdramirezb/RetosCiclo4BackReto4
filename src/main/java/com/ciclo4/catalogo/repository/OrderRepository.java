@@ -48,9 +48,9 @@ public class OrderRepository {
         return orderCrudRepository.findBySalesManIdAndStatus(id, status);
     }
 
-    public List<Order> getOrdersBySalesManIdAndRegisterDay(Integer id, String registerDay) {
+    public List<Order> getByRegisterDayAndSalesManId(String registerDay, Integer id){
         try {
-            return orderCrudRepository.findBySalesManIdAndRegisterDay(id, new SimpleDateFormat("yyyy-MM-dd").parse(registerDay));
+            return orderCrudRepository.findByRegisterDayAndSalesManId(new SimpleDateFormat("yyyy-MM-dd").parse(registerDay), id);
         } catch (ParseException e) {
             e.printStackTrace();
             return null;
