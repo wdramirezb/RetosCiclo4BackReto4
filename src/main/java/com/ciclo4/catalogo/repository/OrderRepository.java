@@ -52,6 +52,7 @@ public class OrderRepository {
         try {
             return orderCrudRepository.findBySalesManIdAndRegisterDay(id, new SimpleDateFormat("yyyy-MM-dd").parse(registerDay));
         } catch (ParseException e) {
+            e.printStackTrace();
             return null;
         }
     }
